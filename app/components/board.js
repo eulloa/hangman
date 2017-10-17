@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from './header';
 import WordArranger from './wordArranger';
 import Keyboard from './keyboard';
 
@@ -30,23 +31,20 @@ class Board extends React.Component {
         })
     }
 
-    guessLetter = (button) => {
-        // let letter = button.target.value;
-        // if (this.state.word.includes(letter)) {
+    setWordToGuess = (word) => {
 
-        // }
-        console.log(button.type);
     }
 
-    handleClick = (e) => {
-        console.log(e)
+    guessLetter = (button) => {
+        console.log(button.type);
     }
     
     render() {
         return (
             <div className="board">
+                <Header guesses={this.props.guesses} />
                 <WordArranger word={this.state.word} />
-                <Keyboard onClick={this.handleClick} />
+                <Keyboard {...this.props} />
             </div>
         );
     }

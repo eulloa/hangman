@@ -10,7 +10,7 @@ let Keyboard = (props) => {
         <ol className="keyboard">
             {
                 alphabet.map((letter, i) => {
-                    return <li key={i}><button onClick={(e) => {props.onClick(e)}}>{letter}</button></li>
+                    return <li key={i}><button onClick={() => { props.decrementGuesses(); }}>{letter}</button></li>
                 })
             }
         </ol>
